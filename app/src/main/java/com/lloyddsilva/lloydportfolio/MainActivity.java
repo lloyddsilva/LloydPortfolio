@@ -27,54 +27,42 @@ public class MainActivity extends ActionBarActivity {
         btnSpotifyStreamer = (Button) findViewById(R.id.btnSpotifyStreamer);
         btnSpotifyStreamer.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Do something in response to button click
-                Toast toast = Toast.makeText(getApplicationContext(), "This button will launch my Spotify Streamer app!", Toast.LENGTH_SHORT);
-                toast.show();
+                showToast(btnSpotifyStreamer);
             }
         });
 
         btnScoresApp = (Button) findViewById(R.id.btnScoresApp);
         btnScoresApp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Do something in response to button click
-                Toast toast = Toast.makeText(getApplicationContext(), "This button will launch my Scores app!", Toast.LENGTH_SHORT);
-                toast.show();
+                showToast(btnScoresApp);
             }
         });
 
         btnLibraryApp = (Button) findViewById(R.id.btnLibraryApp);
         btnLibraryApp.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Do something in response to button click
-                Toast toast = Toast.makeText(getApplicationContext(), "This button will launch my Library app!", Toast.LENGTH_SHORT);
-                toast.show();
+                showToast(btnLibraryApp);
             }
         });
 
         btnBuildItBigger = (Button) findViewById(R.id.btnBuildItBigger);
         btnBuildItBigger.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Do something in response to button click
-                Toast toast = Toast.makeText(getApplicationContext(), "This button will launch my Build It Bigger app!", Toast.LENGTH_SHORT);
-                toast.show();
+                showToast(btnBuildItBigger);
             }
         });
 
         btnXYZReader = (Button) findViewById(R.id.btnXYZReader);
         btnXYZReader.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Do something in response to button click
-                Toast toast = Toast.makeText(getApplicationContext(), "This button will launch my XYZ Reader app!", Toast.LENGTH_SHORT);
-                toast.show();
+                showToast(btnXYZReader);
             }
         });
 
         btnCapstone = (Button) findViewById(R.id.btnCapstone);
         btnCapstone.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Do something in response to button click
-                Toast toast = Toast.makeText(getApplicationContext(), "This button will launch my Capstone app!", Toast.LENGTH_SHORT);
-                toast.show();
+                showToast(btnCapstone);
             }
         });
     }
@@ -86,18 +74,10 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    public void showToast(View view) {
+        Button button = (Button) view;
+        Toast toast = Toast.makeText(getApplicationContext(), "This button will launch my " + button.getText() + " app!", Toast.LENGTH_SHORT);
+        toast.show();
     }
+
 }
